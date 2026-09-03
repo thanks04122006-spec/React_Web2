@@ -1,0 +1,143 @@
+/* 전체 페이지 */
+body {
+    margin: 0;
+    font-family: "Pretendard", sans-serif;
+    background: #ffeb3b;
+}
+
+/* 도서관 영역 */
+.Library-container {
+    min-height: 100vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+
+    padding: 100px 40px;
+
+    background:
+            radial-gradient(
+                    circle at 95% 15%,
+                    #4caf50 0,
+                    #4caf50 15%,
+                    transparent 16%
+            ),
+            radial-gradient(
+                    circle at 5% 80%,
+                    #81c784 0,
+                    #81c784 10%,
+                    transparent 11%
+            ),
+            #ffeb3b;
+}
+
+/* 우유 단지 카드 */
+.book-card {
+    width: 270px;
+    min-height: 450px;
+
+    background: #fffbe6;
+
+    position: relative;
+
+    padding: 60px 20px 30px;
+
+    text-align: center;
+
+    border-radius:
+            50px 50px 90px 90px /
+        20px 20px 100px 100px;
+
+    box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+/* 병목 */
+.book-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -5px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 170px;
+    height: 55px;
+
+    background: #fffbe6;
+
+    border-radius: 30px;
+
+    z-index: 1;
+}
+
+/* 초록 뚜껑 */
+.book-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: -25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 130px;
+    height: 35px;
+
+    background: #2e7d32;
+
+    border-radius: 15px;
+
+    box-shadow:
+            inset 0 3px 7px rgba(255, 255, 255, 0.3);
+
+    z-index: 2;
+}
+
+/* 호버 */
+.book-card:hover {
+    transform: translateY(-12px);
+    box-shadow:
+            0 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* 책 표지 */
+.book-cover {
+    width: 180px;
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    border: 6px solid #fff176;
+
+    background: white;
+
+    margin-bottom: 20px;
+}
+
+/* 제목 */
+.book-card h1 {
+    font-size: 1.25rem;
+    color: #2e7d32;
+
+    margin: 15px 0;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+/* 페이지 */
+.book-card h2 {
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
