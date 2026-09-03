@@ -1,0 +1,160 @@
+/* 전체 페이지 */
+body {
+    margin: 0;
+    background-color: #f3f4f6;
+    font-family: "Pretendard", sans-serif;
+}
+
+/* 메인 컨테이너 */
+.clock-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    gap: 30px;
+}
+
+/* 배경 CLOCK */
+.clock-bg {
+    position: absolute;
+
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 10rem;
+    font-weight: 900;
+
+    letter-spacing: 15px;
+
+    color: rgba(220, 220, 220, 0.5);
+
+    z-index: 0;
+    user-select: none;
+}
+
+/* 상단 파란 캡슐 */
+.clock-container h1 {
+    z-index: 2;
+
+    margin: 0;
+
+    background: #2196f3;
+    color: white;
+
+    padding: 16px 40px;
+
+    border-radius: 999px;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.25);
+}
+
+/* 가로 타임라인 */
+.clock-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80%;
+    height: 4px;
+
+    top: 52%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+            repeating-linear-gradient(
+                    to right,
+                    #cfcfcf 0px,
+                    #cfcfcf 3px,
+                    transparent 3px,
+                    transparent 20px
+            );
+
+    opacity: 0.8;
+
+    z-index: 1;
+}
+
+/* 중앙 흰색 마커 */
+.time-marker {
+    width: 90px;
+    height: 220px;
+
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 20px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    z-index: 2;
+}
+
+/* 마커 숫자 */
+.time-marker span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2196f3;
+}
+
+/* 중앙 파란 세로 바 */
+.time-marker::after {
+    content: "";
+
+    width: 5px;
+    height: 90px;
+
+    background: #2196f3;
+
+    border-radius: 999px;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -15%);
+}
+
+/* 현재 시간 */
+.clock-container h2 {
+    margin: 0;
+
+    z-index: 2;
+
+    color: #000;
+
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+/* 설명 문구 */
+.clock-container p {
+    margin: 0;
+
+    z-index: 2;
+
+    color: #9e9e9e;
+
+    font-size: 1.3rem;
+}
