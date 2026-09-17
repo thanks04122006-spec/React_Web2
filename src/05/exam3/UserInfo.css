@@ -1,0 +1,18 @@
+/* 프로필 영역 */
+
+#root > div > div > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 이름 */
+
+#root > div > div > div:first-child div {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    color: #5f79c6;
+
+    letter-spacing: 1px;
+}
