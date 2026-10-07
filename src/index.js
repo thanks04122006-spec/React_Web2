@@ -12,14 +12,15 @@ import reportWebVitals from './reportWebVitals';
 // import ConfirmDialogList from "./04/ConfirmDialogList";
 // import WelcomeList from "./05/exam01/WelcomeList";
 //import Booklist from "./05/exam02/Booklist";
-import UserInfoList from "./05/exam3/UserInfoList";
+// import UserInfoList from "./05/exam3/UserInfoList";
+import NotificationList from "./06/test/NotificationList";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 setInterval(() => {
      root.render(
             <React.StrictMode>
-                {<UserInfoList/>}
+                {<NotificationList/>}
             </React.StrictMode>
         );
     },1000

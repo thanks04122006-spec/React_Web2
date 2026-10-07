@@ -1,0 +1,172 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    min-height:100vh;
+
+    font-family:'Pretendard','Malgun Gothic',sans-serif;
+
+    background:
+            radial-gradient(
+                    circle at top,
+                    #ffcade 0%,
+                    #ff90b8 35%,
+                    #ff5c96 70%,
+                    #f7296a 100%
+            );
+
+    color:#444;
+}
+
+/* 컨테이너 */
+
+.tarot-container{
+    min-height:100vh;
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* 헤더 */
+
+.tarot-subtitle{
+    color:#ffffff;
+    font-size:14px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.tarot-main-title{
+    margin:15px 0;
+
+    font-size:62px;
+    font-weight:800;
+    color:white;
+
+    text-shadow:
+            0 4px 10px rgba(0,0,0,.15);
+}
+
+.tarot-desc{
+    color:#fff5f8;
+    font-size:18px;
+}
+
+/* 리스트 */
+
+.notification-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    align-items:center;
+}
+
+/* 카드 */
+
+.notification-card{
+    width:620px;
+    max-width:95%;
+
+    display:flex;
+    gap:18px;
+    align-items:center;
+
+    padding:22px;
+
+    background:white;
+
+    border:none;
+
+    border-radius:28px;
+
+    text-align:left;
+
+    box-shadow:
+            0 10px 30px rgba(255,55,120,.15);
+
+    transition:0.3s;
+}
+
+.notification-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+            0 15px 40px rgba(255,55,120,.25);
+}
+
+/* 아이콘 */
+
+.tarot-symbol{
+    width:70px;
+    height:70px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+
+    border-radius:22px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #ff89b1,
+                    #ff4c89
+            );
+
+    color:white;
+    font-size:30px;
+
+    box-shadow:
+            0 8px 20px rgba(255,76,137,.35);
+}
+
+/* 내용 */
+
+.notification-content{
+    flex:1;
+}
+
+.notification-title{
+    color:#ff4c89;
+
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:6px;
+}
+
+.notification-message{
+    color:#444;
+
+    font-size:17px;
+    line-height:1.6;
+}
+
+/* 모바일 */
+
+@media(max-width:768px){
+
+    .tarot-main-title{
+        font-size:40px;
+    }
+
+    .notification-card{
+        padding:18px;
+    }
+
+    .tarot-symbol{
+        width:55px;
+        height:55px;
+        font-size:24px;
+    }
+
+    .notification-message{
+        font-size:15px;
+    }
+}

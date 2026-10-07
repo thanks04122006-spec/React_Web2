@@ -344,9 +344,6 @@ body::after {
             #26aaff,
             #00a1ff
     );
-
-    box-shadow:
-            0 4px 10px rgba(140, 200, 255, 0.3)
 }
 #root > div > div::after {
     content: "✦ ✦";
