@@ -147,26 +147,3 @@ body{
     font-size:17px;
     line-height:1.6;
 }
-
-/* 모바일 */
-
-@media(max-width:768px){
-
-    .tarot-main-title{
-        font-size:40px;
-    }
-
-    .notification-card{
-        padding:18px;
-    }
-
-    .tarot-symbol{
-        width:55px;
-        height:55px;
-        font-size:24px;
-    }
-
-    .notification-message{
-        font-size:15px;
-    }
-}

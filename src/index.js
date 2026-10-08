@@ -13,18 +13,21 @@ import reportWebVitals from './reportWebVitals';
 // import WelcomeList from "./05/exam01/WelcomeList";
 //import Booklist from "./05/exam02/Booklist";
 // import UserInfoList from "./05/exam3/UserInfoList";
-import NotificationList from "./06/test/NotificationList";
+// import NotificationList from "./06/test/NotificationList";
+// import Usestate from "./07/UseState2";
+// import TextinputWithFocusButton from "./07/1/TextinputWithFocusButton";
+import Aucommodate from "./07/2/Aucommodate";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-setInterval(() => {
+// setInterval(() => {
      root.render(
             <React.StrictMode>
-                {<NotificationList/>}
+                {<Aucommodate/>}
             </React.StrictMode>
         );
-    },1000
-)
+//     },1000
+// )
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
