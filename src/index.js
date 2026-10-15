@@ -20,13 +20,14 @@ import reportWebVitals from './reportWebVitals';
 // import Toggle from "./08/1/Toggle";
 import MyButton from "./08/1/MyButton";
 import Toggle2 from "./08/1/Toggle2";
+import MyButton2 from "./08/1/MyButton2";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                {<Toggle2/>}
+                {<MyButton2/>}
             </React.StrictMode>
         );
 //     },1000
