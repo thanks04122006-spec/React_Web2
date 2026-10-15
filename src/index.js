@@ -18,16 +18,19 @@ import reportWebVitals from './reportWebVitals';
 // import TextinputWithFocusButton from "./07/1/TextinputWithFocusButton";
 // import Aucommodate from "./07/2/Aucommodate";
 // import Toggle from "./08/1/Toggle";
-import MyButton from "./08/1/MyButton";
-import Toggle2 from "./08/1/Toggle2";
-import MyButton2 from "./08/1/MyButton2";
+// import MyButton from "./08/1/MyButton";
+// import Toggle2 from "./08/1/Toggle2";
+// import MyButton2 from "./08/1/MyButton2";
+// import ConfirmButton from "./08/2/ConfirmButton";
+// import ConfirmButton2 from "./08/2/ConfirmButton2";
+import SentMessgeBox from "./08/1/SentMessgeBox";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                {<MyButton2/>}
+                {<SentMessgeBox/>}
             </React.StrictMode>
         );
 //     },1000
