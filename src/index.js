@@ -16,14 +16,17 @@ import reportWebVitals from './reportWebVitals';
 // import NotificationList from "./06/test/NotificationList";
 // import Usestate from "./07/UseState2";
 // import TextinputWithFocusButton from "./07/1/TextinputWithFocusButton";
-import Aucommodate from "./07/2/Aucommodate";
+// import Aucommodate from "./07/2/Aucommodate";
+// import Toggle from "./08/1/Toggle";
+import MyButton from "./08/1/MyButton";
+import Toggle2 from "./08/1/Toggle2";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                {<Aucommodate/>}
+                {<Toggle2/>}
             </React.StrictMode>
         );
 //     },1000
