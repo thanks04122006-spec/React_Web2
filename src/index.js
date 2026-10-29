@@ -23,14 +23,22 @@ import reportWebVitals from './reportWebVitals';
 // import MyButton2 from "./08/1/MyButton2";
 // import ConfirmButton from "./08/2/ConfirmButton";
 // import ConfirmButton2 from "./08/2/ConfirmButton2";
-import SentMessgeBox from "./08/1/SentMessgeBox";
+// import SentMessgeBox from "./08/1/SentMessgeBox";
+// import Greeting from "./09/1/GreetingTest";
+// import LogControl2 from "./09/2/LogControl";
+//import "./09/ex2/LogControl.css"
+// import MailBox from "./09/3/MailBox";
+// import "./09/3/MailBox.css";
+//import LogControl2 from "./09/ex3/LogControl2";
+// import MainPage from "./09/ex4/MainPage";
+import LandingPage from "./09/finalex/LandingPage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                {<SentMessgeBox/>}
+                {<LandingPage/>}
             </React.StrictMode>
         );
 //     },1000
