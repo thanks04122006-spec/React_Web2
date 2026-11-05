@@ -31,14 +31,20 @@ import reportWebVitals from './reportWebVitals';
 // import "./09/3/MailBox.css";
 //import LogControl2 from "./09/ex3/LogControl2";
 // import MainPage from "./09/ex4/MainPage";
-import LandingPage from "./09/finalex/LandingPage";
+// import LandingPage from "./09/finalex/LandingPage";
+// import MapTest from "./10/ex1/MapTest";
+// import AttendenceBook from "./10/ex1/AttendenceBook";
+// import AttendenceCard from "./10/ex1/AttendenceCard";
+// import NewForm from "./11/NewForm";
+// import FruitSelect from "./11/FruitSelect";
+import Reservation from "./11/Reservation";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                {<LandingPage/>}
+                {<Reservation/>}
             </React.StrictMode>
         );
 //     },1000
