@@ -40,14 +40,18 @@ import reportWebVitals from './reportWebVitals';
 // import Reservation from "./11/Reservation";
 // import Calculator from "./12/ex2/Calculator";
 // import Calculator from "./12/ex4/Calculator";
-import DistanceConvertor from "./12/ex5/DistanceConvertor";
+// import DistanceConvertor from "./12/ex5/DistanceConvertor";
+// import WelcomeDialog from "./13/ex2/WelcomeDialog";
+// import SingupDialog from "./13/ex3/SingupDialog";
+import ProfileCard from "./13/ex4/ProfileCard";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                <DistanceConvertor />
+                <ProfileCard />
             </React.StrictMode>
         );
 //     },1000
