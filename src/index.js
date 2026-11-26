@@ -43,15 +43,15 @@ import reportWebVitals from './reportWebVitals';
 // import DistanceConvertor from "./12/ex5/DistanceConvertor";
 // import WelcomeDialog from "./13/ex2/WelcomeDialog";
 // import SingupDialog from "./13/ex3/SingupDialog";
-import ProfileCard from "./13/ex4/ProfileCard";
-
+// import ProfileCard from "./13/ex4/ProfileCard";
+import DarkOrLight from "./14/DarkOrLight";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                <ProfileCard />
+                <DarkOrLight />
             </React.StrictMode>
         );
 //     },1000
