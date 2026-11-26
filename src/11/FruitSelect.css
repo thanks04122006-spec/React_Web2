@@ -1,0 +1,177 @@
+/* Original form structure, styled entirely through CSS. */
+body:has(.fruit-select) {
+  background: #faf8f0;
+}
+
+.fruit-select {
+  --fruit-accent: #bc4f4a;
+  --fruit-soft: #f7e7df;
+  --fruit-paper: #fff4eb;
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  grid-template-rows: 1fr auto auto 1fr;
+  column-gap: 48px;
+  width: min(980px, calc(100% - 48px));
+  min-height: 620px;
+  margin: 64px auto;
+  padding: 38px;
+  border: 1px solid #e8e0d3;
+  border-radius: 3px;
+  color: #443c35;
+  background: linear-gradient(90deg, var(--fruit-paper) 0 52%, #fffdf6 52%);
+  box-shadow: 0 18px 50px #6853400b;
+  font-family: "Malgun Gothic", sans-serif;
+}
+
+.fruit-select *, .fruit-select::before, .fruit-select::after {
+  box-sizing: border-box;
+}
+
+.fruit-select:has(option[value="mango"]:checked) {
+  --fruit-accent: #9b6b1e;
+  --fruit-soft: #f4e8b8;
+  --fruit-paper: #fff9e5;
+}
+
+.fruit-select:has(option[value="grape"]:checked) {
+  --fruit-accent: #76587e;
+  --fruit-soft: #e9ddec;
+  --fruit-paper: #f4eff8;
+}
+
+.fruit-select:has(option[value="peach"]:checked) {
+  --fruit-accent: #b76c5b;
+  --fruit-soft: #f7dfd5;
+  --fruit-paper: #fff1eb;
+}
+
+/* The four hand-drawn fruits remain a decorative scrapbook collage. */
+.fruit-select::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 9px solid #fffcf1;
+  outline: 1px solid #e6dfd2;
+  background: url("./imgs/fruit-collage-cute.png") center / cover no-repeat;
+  box-shadow: 0 10px 22px #68534016;
+  rotate: -3deg;
+}
+
+.fruit-select::after {
+  content: "A little fruit, a lovely day. ✿";
+  grid-column: 2;
+  grid-row: 4;
+  padding-top: 24px;
+  color: #a09281;
+  text-align: center;
+  font: italic 15px Georgia, serif;
+  align-self: start;
+}
+
+.fruit-select > label {
+  grid-column: 2;
+  grid-row: 2;
+  display: block;
+  min-width: 0;
+  color: #655447;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.fruit-select > label::before {
+  content: "THE FRUIT DIARY";
+  display: block;
+  margin-bottom: 18px;
+  color: var(--fruit-accent);
+  font: 12px/1.5 Georgia, serif;
+  letter-spacing: 3px;
+}
+
+.fruit-select > label::after {
+  content: "좋아하는 색, 좋아하는 향. 오늘의 과일 한 조각.";
+  display: block;
+  margin: 14px 0 8px;
+  color: #948677;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.fruit-select select {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-top: 14px;
+  padding: 0 14px;
+  border: 1px solid #d9cdbd;
+  border-radius: 4px;
+  color: #514537;
+  background: #fffdf7;
+  font: 15px "Malgun Gothic", sans-serif;
+  cursor: pointer;
+}
+
+.fruit-select > br {
+  display: none;
+}
+
+.fruit-select > button {
+  grid-column: 2;
+  grid-row: 3;
+  width: 100%;
+  min-height: 49px;
+  margin-top: 10px;
+  padding: 14px 18px;
+  border: 1px solid var(--fruit-accent);
+  border-radius: 4px;
+  color: #fffaf2;
+  background: var(--fruit-accent);
+  font: 14px "Malgun Gothic", sans-serif;
+  cursor: pointer;
+  transition: filter 150ms ease;
+}
+
+.fruit-select > button:hover {
+  filter: brightness(.92);
+}
+
+.fruit-select select:focus-visible,
+.fruit-select > button:focus-visible {
+  outline: 3px solid var(--fruit-accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 720px) {
+  .fruit-select {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 0;
+    width: min(480px, calc(100% - 32px));
+    min-height: auto;
+    margin: 28px auto;
+    padding: 28px;
+    background: linear-gradient(var(--fruit-paper), #fffdf6);
+  }
+
+  .fruit-select::before {
+    grid-row: 1;
+    margin: 8px 0 40px;
+  }
+
+  .fruit-select > label,
+  .fruit-select > button,
+  .fruit-select::after {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fruit-select > button {
+    transition: none;
+  }
+}

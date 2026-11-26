@@ -1,0 +1,163 @@
+/* finalex 전용: 청록색 벽, 버터색 타일, 빈티지 메뉴판 */
+body {
+  margin: 0;
+  color: #305c60;
+  background: #a4c8c8;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  padding: 36px 24px 96px;
+  background:
+    radial-gradient(ellipse at 18% 0%, #ffffff38, transparent 55%),
+    linear-gradient(180deg, #a4c8c8, #92baba);
+}
+
+/* 아래쪽의 노란 타일 카운터 */
+#root::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 58% 0 0;
+  border-top: 14px solid #ecda8b;
+  background-color: #e8d48a;
+  background-image:
+    linear-gradient(#92b6b3 3px, transparent 3px),
+    linear-gradient(90deg, #92b6b3 3px, transparent 3px),
+    linear-gradient(120deg, #fff7c742, #bba44814);
+  background-size: 84px 84px, 84px 84px, 100% 100%;
+  box-shadow: 0 -5px 0 #f8e9aa, inset 0 14px 18px #8a783324;
+  pointer-events: none;
+}
+
+#root > div:has(> hr) {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+/* 노란 메뉴판을 닮은 툴바 */
+#root > div:has(> hr) > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 80px;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  border: 5px solid #efdb87;
+  border-radius: 3px;
+  background: linear-gradient(110deg, #f5e5a3, #e8d27d);
+  box-shadow: inset 0 0 0 1px #bda34e66, 5px 7px 0 #476d6533;
+}
+
+#root > div:has(> hr) > div:first-child > span {
+  margin-right: auto;
+  color: #305c60;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+#root > div:has(> hr) button {
+  min-width: 112px;
+  min-height: 44px;
+  padding: 10px 24px;
+  border: 2px solid #426e70;
+  border-radius: 6px;
+  background: #426e70;
+  color: #fff4c4;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #2d5153;
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+@media (hover: hover) {
+  #root > div:has(> hr) button:hover {
+    background: #335c5e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 #2d5153;
+  }
+}
+
+#root > div:has(> hr) button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #2d5153;
+}
+
+#root > div:has(> hr) button:focus-visible {
+  outline: 3px solid #305c60;
+  outline-offset: 5px;
+}
+
+#root > div:has(> hr) > hr {
+  margin: 28px 0;
+  height: 1px;
+  border: 0;
+  background: #eff3d780;
+}
+
+/* 크림색 액자와 청록색 글씨 */
+#root > div:has(> hr) > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  box-sizing: border-box;
+  padding: 38px 36px 42px;
+  border: 10px solid #eddb91;
+  border-radius: 3px;
+  background: linear-gradient(120deg, #fff4c9, #f3e5af);
+  color: #305c60;
+  font-size: clamp(20px, 3.3vw, 30px);
+  font-weight: 800;
+  line-height: 1.7;
+  letter-spacing: 1.5px;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  box-shadow: inset 0 0 0 2px #cfb75e80, 9px 12px 0 #496a5f33, 0 20px 40px #4f6f6226;
+}
+
+#root > div:has(> hr) > div:last-child > img {
+  display: block;
+  box-sizing: border-box;
+  width: min(100%, 560px);
+  max-height: 480px;
+  height: auto;
+  object-fit: contain;
+  padding: 10px;
+  border: 1px solid #729b9666;
+  border-radius: 4px;
+  background: #a6c9c5;
+  box-shadow: 0 6px 12px #48665a1a;
+}
+
+@media (max-width: 600px) {
+  #root { padding: 22px 18px 64px; }
+  #root::before { background-size: 58px 58px, 58px 58px, 100% 100%; }
+  #root > div:has(> hr) > div:first-child { padding: 14px; gap: 12px; }
+  #root > div:has(> hr) > div:last-child {
+    padding: 28px 18px 30px;
+    border-width: 7px;
+    gap: 22px;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 0 0 1px #cfb75e80, 5px 7px 0 #496a5f33;
+  }
+  #root > div:has(> hr) > div:last-child > img { padding: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root > div:has(> hr) button { transition: none; }
+}

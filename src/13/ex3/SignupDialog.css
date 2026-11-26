@@ -1,0 +1,84 @@
+#root:has(> .FancyBorder > input) {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: clamp(1rem, 5vw, 3rem);
+    background:
+        radial-gradient(circle, #8c78ad24 1px, transparent 1.5px) 0 0 / 21px 21px,
+        linear-gradient(145deg, #eee7ff, #fff0f4 70%, #fff6dd);
+}
+
+#root > .FancyBorder:has(> input) {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: min(100%, 27rem);
+    margin: 0;
+    padding: clamp(1.25rem, 6vw, 2.5rem);
+    border: 1px solid #fff;
+    border-radius: 2rem;
+    background: #fffbfe;
+    color: #2e2144;
+    text-align: center;
+    box-shadow: 0 1.25rem 3rem #4a2a7529;
+}
+
+#root > .FancyBorder:has(> input)::before {
+    display: block;
+    width: min(100%, 10.5rem);
+    aspect-ratio: 1;
+    margin: 0 auto 1rem;
+    border-radius: 45% 55% 59% 41% / 55% 38% 62% 45%;
+    background: url("./sleepy-cat.png") center / 90% no-repeat, #f0e9ff;
+    background-blend-mode: multiply;
+    content: "";
+}
+
+#root > .FancyBorder:has(> input) .Dialog-title {
+    margin: 0;
+    font-size: clamp(1.5rem, 6.5vw, 2.25rem);
+    letter-spacing: -0.05em;
+    text-wrap: balance;
+}
+
+#root > .FancyBorder:has(> input) .Dialog-message {
+    margin: 0.55rem 0 1.5rem;
+    color: #665772;
+    line-height: 1.5;
+}
+
+#root > .FancyBorder:has(> input) > :is(input, button) {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 3.125rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.95rem;
+    font: inherit;
+}
+
+#root > .FancyBorder:has(> input) > input {
+    border-color: #d9c9ec;
+    background: #f8f3ff;
+    color: #2e2144;
+}
+
+#root > .FancyBorder:has(> input) > button {
+    margin-top: 0.65rem;
+    background: #6844a1;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#root > .FancyBorder:has(> input) > button:hover {
+    background: #553583;
+}
+
+#root > .FancyBorder:has(> input) > :is(input, button):focus-visible {
+    outline: 2px solid #6844a1;
+    outline-offset: 3px;
+}

@@ -1,0 +1,150 @@
+/* MainPage.jsx 상단에 import "./MainPage.css"; 를 추가하세요. */
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  color: #16426c;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 15% 10%, #ffffffb3, transparent 42%),
+    radial-gradient(ellipse at 85% 90%, #9cdfff, transparent 45%),
+    linear-gradient(145deg, #e6effa, #cce9ff);
+}
+
+#root > div:has(> button) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  box-sizing: border-box;
+  width: min(100%, 440px);
+  min-height: 450px;
+  padding: 180px 32px 40px;
+  border: 6px solid #fff;
+  border-radius: 40px;
+  background:
+    radial-gradient(ellipse at 5% 100%, #ffffffd9 0%, transparent 38%),
+    radial-gradient(ellipse at 100% 100%, #ffffffcc 0%, transparent 38%),
+    linear-gradient(180deg, #1d8ff2 0%, #57b6fa 52%, #dff3ff 100%);
+  box-shadow: 0 22px 60px #256aa526, 0 4px 12px #256aa514;
+}
+
+/* 상단 별 장식 */
+#root > div:has(> button)::before {
+  content: "★";
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border: 3px solid #ffffffb3;
+  border-radius: 50%;
+  color: #fff6b5;
+  background: #ffffff26;
+  font-size: 58px;
+  line-height: 1;
+  transform: translateX(-50%) rotate(-12deg);
+  box-shadow: 0 0 0 12px #ffffff14;
+  pointer-events: none;
+}
+
+#root > div:has(> button) > div {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 22px 18px;
+  border: 2px solid #fff;
+  border-radius: 24px;
+  background: #fff8fc;
+  color: #a6336a;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -1px;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-shadow: 0 8px 20px #1468ab12;
+  animation: warning-pop 220ms ease-out;
+}
+
+#root > div:has(> button) > div::before {
+  content: "!";
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: #f380aa;
+  color: white;
+  font-size: 22px;
+  vertical-align: 3px;
+}
+
+#root > div > button {
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 24px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #0876d0;
+  color: white;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #0860a8;
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+@media (hover: hover) {
+  #root > div > button:hover {
+    background: #0668bb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #0860a8;
+  }
+}
+
+#root > div > button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #0860a8;
+}
+
+#root > div > button:focus-visible {
+  outline: 3px solid #123e70;
+  outline-offset: 5px;
+}
+
+@keyframes warning-pop {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 480px) {
+  #root { padding: 20px; }
+  #root > div:has(> button) {
+    min-height: 410px;
+    padding: 165px 22px 30px;
+    border-radius: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root > div:has(> button) > div { animation: none; }
+  #root > div > button { transition: none; }
+}

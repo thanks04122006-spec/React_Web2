@@ -1,0 +1,108 @@
+.attendance-book {
+  --ink: #303431;
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 32px;
+  width: min(820px, calc(100% - 40px));
+  margin: 64px auto;
+  padding: 48px;
+  list-style: none;
+  color: var(--ink);
+  background-color: #f6f2e9;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23766b56' opacity='.12' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+  border: 1px solid #e6dfd2;
+  border-radius: 5px 9px 6px 11px;
+  box-shadow: 0 18px 48px #51453312, 0 2px 4px #5145330a;
+  font-family: "Trebuchet MS", "Malgun Gothic", sans-serif;
+}
+
+.attendance-book::before {
+  content: "Attendance book";
+  grid-column: 1 / -1;
+  padding-bottom: 22px;
+  border-bottom: 2px dashed #bcb4a5;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.attendance-book > li {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 176px;
+  padding: 36px 28px;
+  background-color: #c8d9e1;
+  background-image: inherit;
+  border-radius: 7px 3px 9px 4px;
+  box-shadow: 1px 4px 5px #4e45351a;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.8px;
+  overflow-wrap: anywhere;
+  transform: rotate(-1.2deg);
+  translate: 0 0;
+  transition: translate 180ms ease, box-shadow 180ms ease;
+}
+
+/* A translucent strip of tape sits across each paper card. */
+.attendance-book > li::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: -11px;
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 25px;
+  background: #c9ac73a6;
+  border-left: 1px dashed #e6d4ad;
+  border-right: 1px dashed #e6d4ad;
+  transform: rotate(-6deg);
+}
+
+.attendance-book > li:nth-child(2) {
+  background-color: #ead6a5;
+  transform: rotate(1deg);
+}
+
+.attendance-book > li:nth-child(3) {
+  background-color: #ccd3bd;
+  transform: rotate(.7deg);
+}
+
+.attendance-book > li:nth-child(4) {
+  background-color: #e6cebb;
+  transform: rotate(-.8deg);
+}
+
+@media (hover: hover) {
+  .attendance-book > .attendance-card:hover {
+    translate: 0 -4px;
+    box-shadow: 1px 8px 12px #4e453524;
+  }
+}
+
+@media (max-width: 560px) {
+  .attendance-book {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin: 24px auto;
+    padding: 32px 24px;
+  }
+
+  .attendance-book > li {
+    min-height: 136px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .attendance-book > li {
+    transition: none;
+  }
+}

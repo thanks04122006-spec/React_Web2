@@ -1,0 +1,305 @@
+/* Student ID carousel and paper card decorations. */
+.attendance-carousel {
+  --id-ink: #505d3c;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 876px);
+  justify-content: center;
+  gap: 48px;
+  padding: 48px 24px 80px;
+  min-height: 100vh;
+  color: var(--id-ink);
+  background: #fff;
+  font-family: "Trebuchet MS", "Malgun Gothic", sans-serif;
+}
+
+.attendance-stage {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.attendance-track {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  min-width: 0;
+  padding: 12px 0 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 20px;
+}
+
+.attendance-track::-webkit-scrollbar {
+  display: none;
+}
+
+.attendance-track > .student-id {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.attendance-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.attendance-arrow {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--id-ink);
+  border-radius: 50%;
+  color: var(--id-ink);
+  background: #eeefd9;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.attendance-arrow:hover {
+  background: #dfe5c8;
+}
+
+.attendance-arrow:focus-visible,
+.attendance-track:focus-visible {
+  outline: 3px solid #8c9473;
+  outline-offset: 4px;
+}
+
+.attendance-carousel > h1 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.attendance-carousel .student-id {
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  grid-template-rows: 105px 1fr 82px;
+  column-gap: 28px;
+  min-height: 450px;
+  padding: 28px 30px;
+  border: 2px solid var(--id-ink);
+  border-radius: 28px;
+  background-color: #eeefd9;
+  background-image:
+    radial-gradient(circle at 6% 34%, #fffef3 0 2px, transparent 3px),
+    radial-gradient(circle at 51% 15%, #fffef3 0 2px, transparent 3px),
+    radial-gradient(circle at 49% 64%, #fffef3 0 3px, transparent 4px),
+    radial-gradient(circle at 96% 55%, #fffef3 0 2px, transparent 3px),
+    linear-gradient(#fff8e633, #e1e6c933);
+  box-shadow: inset 0 0 0 5px #fffdec66, 0 5px 16px #505d3c08;
+  transition: translate 180ms ease, box-shadow 180ms ease;
+}
+
+/* The capsule label and three small printed circles. */
+.attendance-carousel .student-id::before {
+  content: "제초자격증";
+  box-sizing: border-box;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: start;
+  margin-left: 4px;
+  padding: 7px 18px;
+  border: 2px solid var(--id-ink);
+  border-radius: 30px;
+  background: #fbfae9;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1;
+  box-shadow: 0 1px 0 #505d3c12;
+}
+
+.attendance-carousel .student-id::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 28px 30px;
+  /* Four paper photo corners overlay the frame; the barcode stays at left. */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 390' preserveAspectRatio='none'%3E%3Cg fill='%23eeefd9' stroke='%23505d3c' stroke-width='1.5' stroke-dasharray='6 4' stroke-linejoin='round'%3E%3Cpath d='M1 1H51L1 51Z'/%3E%3Cpath d='M259 1H209L259 51Z'/%3E%3Cpath d='M1 389H51L1 339Z'/%3E%3Cpath d='M259 389H209L259 339Z'/%3E%3C/g%3E%3C/svg%3E"),
+    repeating-linear-gradient(90deg, #303825 0 3px, transparent 3px 6px, #303825 6px 7px, transparent 7px 10px, #303825 10px 15px, transparent 15px 18px, #303825 18px 20px, transparent 20px 23px);
+  background-size: calc((100% - 28px) / 2.3) 100%, 150px 64px;
+  background-position: right top, 2px bottom;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.attendance-carousel .student-id > img {
+  box-sizing: border-box;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: 390px;
+  padding: 24px 10px;
+  object-fit: contain;
+  background: #fbf8e9;
+  border: 2px solid var(--id-ink);
+  border-radius: 22px 10px 22px 10px;
+  outline: 1px dashed #8c9473;
+  outline-offset: 7px;
+}
+
+.attendance-carousel .student-id > div {
+  position: relative;
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  min-width: 0;
+  padding: 15px 0 28px;
+}
+
+.attendance-carousel .student-id > div::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  left: 4px;
+  width: 160px;
+  height: 40px;
+  background:
+    radial-gradient(circle at 20px 20px, #faf9e9 0 17px, #505d3c 18px 19px, transparent 20px),
+    radial-gradient(circle at 80px 20px, #faf9e9 0 17px, #505d3c 18px 19px, transparent 20px),
+    radial-gradient(circle at 140px 20px, #faf9e9 0 17px, #505d3c 18px 19px, transparent 20px);
+  pointer-events: none;
+}
+
+.attendance-carousel h3,
+.attendance-carousel p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 22px;
+  padding-bottom: 9px;
+  border-bottom: 2px dashed #788060;
+  font-size: clamp(18px, 3vw, 25px);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.attendance-carousel h3::before {
+  content: "name :";
+  font-size: 17px;
+  font-style: italic;
+}
+
+.attendance-carousel p::before {
+  content: "grade :";
+  font-size: 17px;
+  font-style: italic;
+}
+
+/* A faint printed grid separates the barcode area. */
+.attendance-carousel .student-id > div::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -30px;
+  right: -28px;
+  height: 88px;
+  border-top: 1px dashed #a9af8c;
+  background-image: linear-gradient(#c3c8a51c 1px, transparent 1px), linear-gradient(90deg, #c3c8a51c 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .attendance-carousel .student-id:hover {
+    translate: 0 -4px;
+    box-shadow: inset 0 0 0 5px #fffdec66, 0 10px 22px #505d3c12;
+  }
+}
+
+@media (max-width: 560px) {
+  .attendance-stage {
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+    gap: 6px;
+  }
+
+  .attendance-arrow {
+    width: 30px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .attendance-carousel {
+    gap: 30px;
+    padding: 28px 8px 48px;
+  }
+
+  .attendance-carousel .student-id {
+    min-height: 310px;
+    grid-template-rows: 82px 1fr 52px;
+    column-gap: 16px;
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .attendance-carousel .student-id::before {
+    padding: 7px 12px;
+    font-size: 17px;
+  }
+
+  .attendance-carousel .student-id::after {
+    inset: 20px 18px;
+    background-size: calc((100% - 16px) / 2.3) 100%, 100px 40px;
+  }
+
+  .attendance-carousel .student-id > img {
+    padding: 12px 4px;
+    max-height: 280px;
+    outline-offset: 4px;
+  }
+
+  .attendance-carousel .student-id > div {
+    padding: 12px 0 0;
+  }
+
+  .attendance-carousel .student-id > div::before {
+    top: -35px;
+    transform: scale(.7);
+    transform-origin: left center;
+  }
+
+  .attendance-carousel h3,
+  .attendance-carousel p {
+    gap: 5px;
+    margin-bottom: 14px;
+    font-size: 17px;
+  }
+
+  .attendance-carousel h3::before,
+  .attendance-carousel p::before {
+    font-size: 13px;
+  }
+
+  .attendance-carousel .student-id > div::after {
+    left: -18px;
+    right: -16px;
+    height: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .attendance-carousel .student-id {
+    transition: none;
+  }
+}
+

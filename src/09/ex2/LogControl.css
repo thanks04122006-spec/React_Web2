@@ -1,0 +1,139 @@
+:root {
+  --login-ink: #242424;
+  --login-paper: #f7f3ef;
+  --login-yellow: #ffe59a;
+  --login-pink: #ffb5c1;
+  --login-mint: #b7e1d1;
+  --login-blue: #a9d3ff;
+}
+
+body {
+  margin: 0;
+  background: var(--login-paper);
+  color: var(--login-ink);
+  font-family: "Arial Rounded MT Bold", "Malgun Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(ellipse at 15% 18%, #b7e1d166 0, transparent 34%),
+    radial-gradient(ellipse at 88% 82%, #a9d3ff66 0, transparent 36%);
+}
+
+#root > div {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: min(100%, 560px);
+  padding: 150px 40px 64px;
+  border: 1px solid #ffffff;
+  border-radius: 38px;
+  background: #fffcf9;
+  text-align: center;
+  box-shadow: 0 20px 60px #24242408;
+}
+
+/* 노란색 유기적인 도형과 눈 모양 장식 */
+#root > div::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 35px;
+  left: calc(50% - 52px);
+  width: 114px;
+  height: 92px;
+  border-radius: 48% 52% 35% 65% / 55% 45% 55% 45%;
+  background: var(--login-yellow);
+  transform: rotate(-12deg);
+}
+
+#root > div::after {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: calc(50% - 14px);
+  width: 9px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--login-ink);
+  box-shadow: 20px 2px 0 var(--login-ink);
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
+#root > div > h1 {
+  margin: 0 0 34px;
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -1.5px;
+  word-break: keep-all;
+}
+
+#root > div > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  min-width: 206px;
+  min-height: 56px;
+  padding: 10px 12px 10px 25px;
+  border: 2px solid var(--login-ink);
+  border-radius: 999px;
+  background: var(--login-ink);
+  color: #fffdfa;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+#root > div > button::after {
+  content: "→";
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--login-yellow);
+  color: var(--login-ink);
+  font-size: 20px;
+}
+
+@media (hover: hover) {
+  #root > div > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #ffe59a80;
+  }
+}
+
+#root > div > button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+#root > div > button:focus-visible {
+  outline: 3px solid #518bc1;
+  outline-offset: 5px;
+}
+
+@media (max-width: 480px) {
+  #root { padding: 20px; }
+  #root > div {
+    padding: 145px 22px 46px;
+    border-radius: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root > div > button { transition: none; }
+}

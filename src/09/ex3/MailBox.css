@@ -1,0 +1,113 @@
+/* MailBox.jsx 상단에서 import "./MailBox.css"; 로 불러오세요. */
+/* 현재 MailBox의 div > h1, h2 구조에 맞춘 스타일입니다. */
+body {
+  margin: 0;
+  color: #542439;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 15%, #ffffff55 0, transparent 35%),
+    radial-gradient(circle at 90% 90%, #ffcfdf88 0, transparent 40%),
+    linear-gradient(155deg, #f7a9c0 0%, #ed6796 48%, #d91458 100%);
+}
+
+#root > div:has(> h1 + h2),
+#root > div:has(> h1:only-child) {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: min(100%, 620px);
+  padding: 150px 38px 52px;
+  border: 3px solid #f3a0bc;
+  border-radius: 34px;
+  background: #fff5f8;
+  text-align: center;
+  box-shadow: 0 24px 70px #7d073c26, inset 0 0 0 5px #ffffffa6;
+  animation: mailbox-appear 500ms ease-out both;
+}
+
+/* CSS로 그린 편지 봉투 */
+#root > div:has(> h1)::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: calc(50% - 42px);
+  width: 84px;
+  height: 58px;
+  border: 3px solid #e61c62;
+  border-radius: 13px;
+  background:
+    linear-gradient(33deg, transparent 49%, #f8a9c3 50%, transparent 52%) left bottom / 50% 100% no-repeat,
+    linear-gradient(-33deg, transparent 49%, #f8a9c3 50%, transparent 52%) right bottom / 50% 100% no-repeat,
+    #ffd7e5;
+  box-shadow: 0 10px 0 #f8c5d64d;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+#root > div:has(> h1)::after {
+  content: "♥";
+  position: absolute;
+  top: 65px;
+  left: calc(50% - 8px);
+  color: #e61c62;
+  font-size: 26px;
+  line-height: 1;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+#root > div > h1 {
+  margin: 0 0 22px;
+  color: #c91652;
+  font-size: clamp(30px, 6vw, 44px);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -1.8px;
+  word-break: keep-all;
+}
+
+#root > div > h2 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px 24px;
+  border: 1px solid #f5b2c9;
+  border-radius: 20px;
+  background: #ffe1eb;
+  color: #81334e;
+  font-size: clamp(15px, 3.5vw, 19px);
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: -0.6px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+@keyframes mailbox-appear {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  #root { padding: 20px; }
+  #root > div:has(> h1 + h2),
+  #root > div:has(> h1:only-child) {
+    padding: 140px 22px 34px;
+    border-radius: 28px;
+  }
+  #root > div > h2 { padding: 18px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root > div:has(> h1) { animation: none; }
+}
