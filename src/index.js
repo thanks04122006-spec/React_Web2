@@ -44,14 +44,15 @@ import reportWebVitals from './reportWebVitals';
 // import WelcomeDialog from "./13/ex2/WelcomeDialog";
 // import SingupDialog from "./13/ex3/SingupDialog";
 // import ProfileCard from "./13/ex4/ProfileCard";
-import DarkOrLight from "./14/DarkOrLight";
+// import DarkOrLight from "./14/DarkOrLight";
+import ShoppingInfo from "./14/ShoppingInfo/ShoppingInfo";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(() => {
      root.render(
             <React.StrictMode>
-                <DarkOrLight />
+                <ShoppingInfo />
             </React.StrictMode>
         );
 //     },1000

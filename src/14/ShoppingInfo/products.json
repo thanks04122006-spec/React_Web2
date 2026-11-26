@@ -1,0 +1,50 @@
+[
+    {
+        "id": "burgundy-wool-coat",
+        "title": "버건디 벨티드 울 코트",
+        "image": "burgundy-wool-coat.png",
+        "alt": "허리에 벨트를 묶은 버건디 울 코트 착용 화보",
+        "price": 159000,
+        "description": "깊은 버건디 색의 롱 코트입니다. 허리 벨트를 묶으면 여유 있는 실루엣을 정돈할 수 있어요."
+    },
+    {
+        "id": "ivory-knit",
+        "title": "아이보리 케이블 터틀넥 니트",
+        "image": "ivory-knit.png",
+        "alt": "꽈배기 짜임이 보이는 아이보리 터틀넥 니트 착용 화보",
+        "price": 69000,
+        "description": "아이보리 바탕에 굵은 꽈배기 짜임을 더한 니트입니다. 도톰한 터틀넥이 목을 감싸요."
+    },
+    {
+        "id": "charcoal-jacket",
+        "title": "차콜 테일러드 울 재킷",
+        "image": "charcoal-jacket.png",
+        "alt": "차콜 울 재킷의 라펠과 실루엣을 보여주는 착용 화보",
+        "price": 129000,
+        "description": "차콜 색의 울 재킷입니다. 선이 또렷한 라펠과 여유 있는 어깨가 특징이에요."
+    },
+    {
+        "id": "beige-trench-coat",
+        "title": "샌드 베이지 더블 트렌치코트",
+        "image": "beige-trench-coat.png",
+        "alt": "두 줄 단추와 허리 벨트가 보이는 샌드 베이지 트렌치코트 착용 화보",
+        "price": 149000,
+        "description": "두 줄 단추와 벨트를 더한 긴 트렌치코트입니다. 허리 벨트로 실루엣을 조절할 수 있어요."
+    },
+    {
+        "id": "green-cardigan",
+        "title": "포레스트 그린 리브드 카디건",
+        "image": "green-cardigan.png",
+        "alt": "세로 골지 짜임과 앞단추가 보이는 포레스트 그린 카디건 착용 화보",
+        "price": 59000,
+        "description": "깊은 녹색과 세로 골지 짜임이 돋보이는 카디건입니다. 단추를 잠가 입거나 티셔츠 위에 걸칠 수 있어요."
+    },
+    {
+        "id": "brown-pleated-trousers",
+        "title": "다크 브라운 핀턱 슬랙스",
+        "image": "brown-pleated-trousers.png",
+        "alt": "앞쪽 주름과 일자 핏이 보이는 다크 브라운 슬랙스 착용 화보",
+        "price": 79000,
+        "description": "허리 앞쪽에 주름을 잡고 밑단까지 일자로 떨어지는 슬랙스입니다. 짙은 갈색이라 밝은 니트와 잘 어울려요."
+    }
+]
